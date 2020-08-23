@@ -132,7 +132,7 @@ openresty -p `pwd` -c nginx.conf
 关于配置文件
 
 - 定义了一个 叫做 dynamic_service 的 upstream，
-- 创建定时器，利用 consul 的 watch api，`passing = true` 过滤得到健康节点，index 是 consul 提供的 blocking query 的 概念，也即 watch。然后更新本地 uupstream 的 peers，来实现动态更新的功能。
+- 创建定时器，利用 consul 的 watch api，`passing = true` 过滤得到健康节点，index 是 consul 提供的 blocking query 的 概念，也即 watch。然后更新本地 upstream 的 peers，来实现动态更新的功能。
 - curl localhost:8080/api，curl localhost:8080/consul
 
 一些想法
@@ -147,7 +147,7 @@ openresty -p `pwd` -c nginx.conf
 
 - 为什么有一个 set_by_lua
 
-在 balancer_by_lua 的 情况下，可以更灵活的选择应用服务器，在应用 dynamic upstream 时，也可以尝试，在配置文件中针对业务需要的灰度发布，预定义多个 upstream，可以 watch tag 不同的 server group，然后通过 set_by_lua，实现更灵活的 load balancer
+在 balancer_by_lua 的 情况下，可以更灵活的选择应用服务器，在应用 dynamic upstream 时，也可以尝试，在配置文件中针对业务需要的灰度发布，预定义多个 upstream，可以 watch tag 不同的 server group，然后通过 set_by_lua 动态的设置 upstream 名字，实现更灵活的 load balancer
 
 - server 0.0.0.1 down
 
@@ -155,7 +155,7 @@ openresty -p `pwd` -c nginx.conf
 
 - lua_package_path "resty_modules/lualib/?.lua;;";
 
-在使用 opm 包管理器的时候，使用 --cwd 可以避免权限问题，或者污染全局环境
+在使用 opm 包管理器的时候，使用 --cwd 可以避免权限问题或者污染全局环境
 
 - ngx.timer.at(1, refresh_service)
 
