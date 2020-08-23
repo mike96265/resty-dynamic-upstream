@@ -1,0 +1,39 @@
+From 33747ce11929614708375dfd6ba258d96f40ad47 Mon Sep 17 00:00:00 2001
+From: luvjoey <luvjoey@localhost.localdomain>
+Date: Sun, 23 Aug 2020 12:10:23 +0800
+Subject: [PATCH] uninclude ngx_stream_lua_request.h
+
+---
+ src/ngx_dynamic_upstream_stream_lua.c        | 2 +-
+ src/ngx_dynamic_upstream_stream_lua_module.c | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/ngx_dynamic_upstream_stream_lua.c b/src/ngx_dynamic_upstream_stream_lua.c
+index 86df7b2..9f51c67 100644
+--- a/src/ngx_dynamic_upstream_stream_lua.c
++++ b/src/ngx_dynamic_upstream_stream_lua.c
+@@ -4,7 +4,7 @@
+ 
+ #include <lauxlib.h>
+ 
+-#include "ngx_stream_lua_request.h"
++// #include "ngx_stream_lua_request.h"
+ #include "ngx_http_lua_api.h"
+ 
+ 
+diff --git a/src/ngx_dynamic_upstream_stream_lua_module.c b/src/ngx_dynamic_upstream_stream_lua_module.c
+index d392107..28bbd04 100644
+--- a/src/ngx_dynamic_upstream_stream_lua_module.c
++++ b/src/ngx_dynamic_upstream_stream_lua_module.c
+@@ -1,7 +1,7 @@
+ #include <ngx_core.h>
+ #include <ngx_stream.h>
+ 
+-#include "ngx_stream_lua_request.h"
++// #include "ngx_stream_lua_request.h"
+ #include "ngx_stream_lua_api.h"
+ 
+ 
+-- 
+2.26.2
+

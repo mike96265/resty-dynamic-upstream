@@ -1,0 +1,11 @@
+--- bundle/ngx_stream_lua-0.0.8/src/api/ngx_stream_lua_api.h	2020-06-30 13:45:16.000000000 +0800
++++ ../../openresty-1.17.8.2/build/ngx_stream_lua-0.0.8/src/api/ngx_stream_lua_api.h	2020-08-22 17:18:04.332507733 +0800
+@@ -53,7 +53,7 @@
+ 
+ lua_State *ngx_stream_lua_get_global_state(ngx_conf_t *cf);
+ 
+-ngx_stream_lua_request_t *ngx_stream_lua_get_request(lua_State *L);
++// ngx_stream_lua_request_t *ngx_stream_lua_get_request(lua_State *L);
+ 
+ ngx_int_t ngx_stream_lua_add_package_preload(ngx_conf_t *cf,
+     const char *package, lua_CFunction func);
