@@ -43,7 +43,7 @@ git clone https://github.com/ZigzagAK/ngx_dynamic_healthcheck.git
 cd ..
 ```
 
-> 需要给 openresty 和 ngx_dynamic_upstream_lua 打上补丁，相关的 issue 可以在这里看 https://github.com/openresty/stream-lua-nginx-module/issues/180，补丁文件在仓库，你可以自行下载到对应的目录
+> 需要给 openresty 和 ngx_dynamic_upstream_lua 打上补丁，相关的 issue 可以在这里看 [https://github.com/openresty/stream-lua-nginx-module/issues/180](https://github.com/openresty/stream-lua-nginx-module/issues/180)，补丁文件在仓库，你可以自行下载到对应的目录
 
 ```bash
 # 在 openresty 解压之后的目录
